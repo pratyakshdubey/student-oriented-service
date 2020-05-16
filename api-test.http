@@ -1,0 +1,21 @@
+GET http://localhost:3000/students
+
+###
+
+POST http://localhost:3000/add-student
+Content-Type: application/json
+
+{
+    "name": "123f",
+    "college": "amity",
+    "adhaar": "123",
+    "phoneno": "123123",
+    "course": "djaslda",
+    "email": "email@gmial.com"
+} 
+
+
+###
+GET http://localhost:3000/get-student/40
+Content-Type: application/json
+
