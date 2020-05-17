@@ -1,0 +1,134 @@
+<%- include('partials/head.ejs') %>
+    <button class="btn success" id="unique_key">REGISTER STUDENT</button>
+    <button class="btn success" id="unique_key2">SEARCH USING UNIQUE KEY</button>
+  <% if(result) { %> 
+    <% console.log(result.idno); %>
+    
+  <%} %>
+    <div class="pimg1">
+      <div class="ptext">
+        <span class="border">
+          'STUDENT ORIENTED SERVICES'
+        </span>
+      </div>
+    </div>
+
+    <section class="section section-light">
+      <h2>WHY STUDENT ORIENTED SERVICES?</h2>
+      <p>
+        Student oriented services: a place which will help students as well as colleges to manage their data about students and about all their important details. Actually, it’s way more than that. Because it’s just not about the functionality and what all it can do but it’s also about the ease of use that will be provided to the user. Student oriented services will store all the important details about the students like student marks, their achievements till now, their courses and all other details which you would expect from a student’s services. And not just that it will also show all the information related to student’s family like his/her fathers name, mothers name, siblings, address, contact number, email etc. but of course it will only show the information that has been provided by the student while getting admission in the college.
+      </p>
+    </section>
+
+    <div class="pimg2">
+      <div class="ptext">
+        <span class="border trans">
+          KNOW ALL ABOUT UNIQUE KEY :)
+          <BR /> <P> ABOUT UNIQUE KEY </P>
+        </span>
+      </div>
+    </div>
+
+    <section class="section section-dark">
+      <h2>CONTACT ME</h2>
+      <p></p>
+  
+        <div class="column">
+          <div class="card">
+            
+            <div class="container">
+              <h2>PRATYAKSH DUBEY</h2>
+              <p class="title">Programmer</p>
+              <p>Contact me : 9555482949</p>
+              <p>pratyaksh.dubey51@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-modal hidden" id="regForKeyModalbg">
+    <div class="modal-content hidden" id="regForKeyModal">
+      <div class="close" id="regForKeyModalClose">+</div>
+
+      <img src="image1.jpeg" alt="">
+      <form action="/add-student" method="POST">
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="E-mail" name="email" >
+        <input type="text" placeholder="College" name="college">
+        <input type="text" placeholder="Phone number" name="phoneno">
+        <input type="text" placeholder="Course" name="course">
+        <input type="text" placeholder="Aadhar number" name="adhaar">
+        <button class="btn btn-lg " type="submit" id="submit-addstudent">Submit</button>
+      </form>
+    </div>
+    </div>
+
+    <% if (result) { %>
+    <div class="bg-modal  " id="id-modal">
+      <div class="modal-content  " id="id-modal-inner">
+        <div class="closeid close">+</div>
+          
+            <div>Your Id No is <%= result.idno %></div>
+ 
+      </div>
+      </div>
+      <%} %> 
+
+      <div class="bg-modal2" id="modal2">
+        <div class="modal2-content" id="enterkeymodalcontent">
+          <div onclick="hideModal(modal2)" class="close closekey">+</div> 
+          <form >
+            <input type="number" placeholder="ENTER UNIQUE KEY" name="key" id="studentKey">
+            <button class="button" id="studentKeyBtn" type="button">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <% if (student) { %>
+        <% console.log("??#!@#!@#!", student) %>
+        <div class="bg-modal  " id="id-modal">
+          <div class="modal-content  " id="id-modal-inner">
+            <div class="closeid close">+</div>
+              
+                <div> Id No: <%= student.idno %></div>
+                <div> Id No: <%= student.name %></div>
+                <div> Id No: <%= student.course %></div>
+                <div> Id No: <%= student.email %></div>
+                <div> Id No: <%= student.phoneno %></div>
+                <div> Id No: <%= student.adhaar %></div>
+     
+          </div>
+          </div>
+          <%} %> 
+
+          <div class="bg-modal" id="id-modal">
+            <div class="modal-content  " id="id-modal-inner">
+              <div class="closeid close" id="idModalClose">+</div>
+               <div id="contento"></div> 
+            </div>
+          </div>
+
+    <!---
+    <div class="bg-modal2 hidden " id="enterkeymodal">
+        <div class="bg-modal2 hidden " id="enterkeymodalinner">
+            <div class="modal2-content " id="enterkeymodalcontent">
+              <div class="close2">+</div> 
+              <form action="/add-student" method="POST">
+                <input type="number" placeholder="ENTER UNIQUE KEY" name="key">
+                <a href="" class="button">Submit</a>
+              </form>
+            </div>
+          </div>
+          </div> 
+        -->
+
+          <script src="./css/app.js"></script>
+          <script type="text/javascript">
+            document.getElementById("regForKeyModalbg").style.display = "none";
+            document.getElementById("regForKeyModal").style.display = "none";
+          </script>
+        </body>
+      </html>
+
+          
